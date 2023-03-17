@@ -7,7 +7,7 @@ const Alldata = ({ employe, i, refetch }) => {
         // const response = window.confirm("Do you want to delete?");
 
 
-        fetch(`http://localhost:5000/alldata/${employe?._id}`, {
+        fetch(`https://test-server-sadekinchowdhury.vercel.app/alldata/${employe?._id}`, {
             method: "DELETE",
             headers: {
                 'content-type': 'application/json'
@@ -30,7 +30,7 @@ const Alldata = ({ employe, i, refetch }) => {
     const editData = () => {
 
 
-        fetch(`http://localhost:5000/alldata/edit/${employe?._id}`, {
+        fetch(`https://test-server-sadekinchowdhury.vercel.app/alldata/edit/${employe?._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -56,7 +56,7 @@ const Alldata = ({ employe, i, refetch }) => {
                 <td>{employe.firstName}</td>
                 <td> {employe.lastName}</td>
                 <td>{employe.Email}</td>
-                <td> {employe.salary}
+                <td> ${employe.salary}
                 </td>
                 <td>{employe.date}</td>
 

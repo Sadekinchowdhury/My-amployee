@@ -23,7 +23,7 @@ const TableForm = ({ employe }) => {
         };
 
 
-        fetch(`http://localhost:5000/post/${employe?._id}`, {
+        fetch(`https://test-server-sadekinchowdhury.vercel.app/post/${employe?._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

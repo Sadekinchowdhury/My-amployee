@@ -25,7 +25,7 @@ const Table = () => {
         };
 
 
-        fetch("http://localhost:5000/post", {
+        fetch("https://test-server-sadekinchowdhury.vercel.app/post", {
             method: "POST",
             headers: {
                 "content-type": "application/json",
@@ -41,7 +41,7 @@ const Table = () => {
     // const [employee, setEmployee] = useState([])
 
     // useEffect(() => {
-    //     fetch(`http://localhost:5000/alldata`)
+    //     fetch(`https://test-server-sadekinchowdhury.vercel.app/alldata`)
     //         .then((res) => res.json())
     //         .then((data) => setEmployee(data));
     // }, []);
@@ -49,7 +49,7 @@ const Table = () => {
         queryKey: ['alldata'],
 
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/alldata', {
+            const res = await fetch('https://test-server-sadekinchowdhury.vercel.app/alldata', {
                 headers: {
 
                     'content-type': 'application/json'
@@ -89,9 +89,7 @@ const Table = () => {
                                     X
                                 </label>
                             </div>
-                            <p className="text-4xl mb-5 text-all-green font-bold">
-                                Ask You Quetions
-                            </p>
+
                             <form onSubmit={handleSubmit(handleDetails)}>
                                 <p className="text-2xl font-semibold text-green-500 mb-4">
                                     Please Provide your information
