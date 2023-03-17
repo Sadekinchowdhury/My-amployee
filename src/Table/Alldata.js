@@ -1,6 +1,7 @@
 import React from 'react';
+import TableForm from '../Tableform/TableForm';
 
-const Alldata = ({ employe, i }) => {
+const Alldata = ({ employe, i, refetch }) => {
 
     const Deleteemploye = () => {
         // const response = window.confirm("Do you want to delete?");
@@ -25,6 +26,26 @@ const Alldata = ({ employe, i }) => {
             )
 
     }
+
+    const editData = () => {
+
+
+        fetch(`http://localhost:5000/alldata/edit/${employe?._id}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify()
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount > 0) {
+
+
+                }
+
+            })
+    }
     return (
 
         <tbody>
@@ -34,15 +55,23 @@ const Alldata = ({ employe, i }) => {
 
                 <td>{employe.firstName}</td>
                 <td> {employe.lastName}</td>
-                <td>{employe.email}</td>
+                <td>{employe.Email}</td>
                 <td> {employe.salary}
                 </td>
                 <td>{employe.date}</td>
 
-                <td>
+                <td className='flex'>
 
-                    <button className="btn btn-outline mr-2">Edit</button>
-                    <button onClick={Deleteemploye} className="btn btn-outline btn-primary">Delete</button>
+                    <div>
+                        <TableForm
+                            employe={employe}
+                            key={employe._id}
+
+                        ></TableForm>
+                    </div>
+                    <div>
+                        <button onClick={Deleteemploye} className="btn btn-outline btn-primary">Delete</button>
+                    </div>
 
                 </td>
 

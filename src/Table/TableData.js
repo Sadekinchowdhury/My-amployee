@@ -18,7 +18,7 @@ const TableData = ({ employee, refetch }) => {
                             <th>Email</th>
                             <th>Salary</th>
                             <th>Date</th>
-                            <th>Action</th>
+                            <th className=''>Action</th>
 
                         </tr>
                     </thead>
